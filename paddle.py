@@ -9,7 +9,7 @@ class Paddle(Turtle):
         self.y_position = y_position
         super().__init__()
         self.shape("square")
-        self.shapesize(stretch_wid=5, stretch_len=0.5)
+        self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
         self.goto(self.x_position, self.y_position)

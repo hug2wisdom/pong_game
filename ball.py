@@ -1,13 +1,14 @@
 from turtle import Turtle
+from random import randint, random
 START_POSITION = (0, 0)
 MOVE_DISTANCE = 10
-
+MOVE_DIRECTION = [-1, 1]
 
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("circle")
-        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.shapesize(stretch_len=1, stretch_wid=1)
         self.color("white")
         self.penup()
         self.goto(START_POSITION)
@@ -24,3 +25,8 @@ class Ball(Turtle):
 
     def kick(self):
         self.x_move *= -1
+
+    def ball_home(self):
+        self.goto(START_POSITION)
+        self.x_move *= random.choice(MOVE_DIRECTION)
+        self.y_move *= random.choice(MOVE_DIRECTION)
